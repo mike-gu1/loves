@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANGO ♥ PUDDING · 我们的小宇宙</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>💗</text></svg>">
+</head>
+<body>
+
+<!-- 背景层 -->
+<div class="bg-gradient"></div>
+<div id="stars"></div>
+<div id="floating-hearts"></div>
+<div class="vignette"></div>
+
+<!-- 顶部栏 -->
+<header class="top-bar">
+  <div class="logo-chip">
+    <span class="logo-heart">💗</span>
+    <span id="coupleName">MANGO ♥ PUDDING</span>
+  </div>
+  <div class="photo-count-chip">
+    <span>📸 照片总数</span>
+    <b id="photoCount">0</b> 张
+  </div>
+</header>
+
+<!-- 恋爱计时器 -->
+<div class="counter-wrap">
+  <div class="counter-eyebrow">OUR LITTLE UNIVERSE</div>
+  <div class="counter-pill">
+    <span class="counter-text">我们把日子攒成星光：</span>
+    <span class="counter-num"><b id="dDays">0</b> 天</span>
+    <span class="counter-num"><b id="dHours">00</b> 时</span>
+    <span class="counter-num"><b id="dMins">00</b> 分</span>
+    <span class="counter-num"><b id="dSecs">00</b> 秒</span>
+  </div>
+  <div class="counter-sub" id="loveQuote">从遇见你的那一刻，整个宇宙都有了意义</div>
+</div>
+
+<!-- 3D 照片舞台（多形态变换：心形/照片墙/星球/横排/圆环/星系/时间线） -->
+<div class="stage">
+  <div class="stage-inner" id="heartScene">
+    <div class="spin-wrap" id="spinWrap">
+      <div id="cardLayer"></div>
+    </div>
+    <div class="center-heart"><span>❤</span></div>
+  </div>
+  <div class="stage-glow"></div>
+  <div class="zoom-hint">滚轮放大 / 缩小 · 双击复位</div>
+
+  <!-- 时间线面板 -->
+  <div class="timeline-panel" id="timelinePanel"></div>
+</div>
+
+<!-- 底部：音乐与歌词 -->
+<footer class="bottom-bar">
+  <div class="equalizer" id="equalizer">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="lyric" id="lyric">♪ 这里存放着我们所有的瞬间 ♪</div>
+  <div class="bottom-controls">
+    <button class="ctrl-btn" id="musicBtn" title="播放/暂停音乐">🎵 打开音乐</button>
+    <button class="ctrl-btn ghost" id="uploadBtn" title="选择照片文件夹或文件">📁 导入照片</button>
+    <button class="ctrl-btn ghost" id="clearBtn" title="清空已保存到本网站的照片">🗑 清空照片</button>
+    <input type="file" id="fileInput" multiple accept="image/*" hidden>
+  </div>
+  <div class="tip">拖拽/导入的照片会自动保存，下次打开自动加载 · 点击照片查看大图</div>
+</footer>
+
+<audio id="bgMusic" loop preload="none" src="music.mp3"></audio>
+
+<!-- 拖拽遮罩 -->
+<div class="drop-overlay" id="dropOverlay">
+  <div class="drop-box">💗 松手，把回忆放进我们的宇宙</div>
+</div>
+
+<!-- 大图查看 -->
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-nav prev" id="lightboxPrev">‹</button>
+  <button class="lightbox-nav next" id="lightboxNext">›</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
